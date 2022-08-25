@@ -12,7 +12,11 @@ class Job extends Model implements HasMedia
 {
     use HasFactory, InteractsWithMedia;
 
-    protected $guarded = ['id','created_at','updated_at'];
+    // protected $guarded = ['id','student_id','created_at','updated_at'];
+    protected $fillable = [
+        'delivery_date',
+        'hired_at',
+    ];
 
     public function student()
     {

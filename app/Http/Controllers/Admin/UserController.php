@@ -1,13 +1,17 @@
 <?php
-
+namespace App\Models;
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Role;
 use App\Models\User;
 use App\Models\Country;
+use App\Models\Job;
+
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreUserRequest;
 use App\Http\Requests\Admin\UpdateUserRequest;
+use Illuminate\Http\Request;
+
 
 class UserController extends Controller
 {
@@ -95,9 +99,26 @@ class UserController extends Controller
     public function search()
     {
         $search_text=$_GET['query'];
+  
         $teachers=User::where('subject','LIKE','%'.$search_text.'%')->get();
         return view('frontend.teachersprofile', compact('teachers'));
     }
+    public function searchbycategory(Request $request)
+    {
+        // dd($subject);
+        // $search_text=$_GET['query'];
+        $data=Request()->get('subject');
+        // dd($data);
+
+  
+        // $teachers=User::where('teachers','LIKE','%'.$search_text.'%')->get();
+// $teachers=User::where('subject',Request()->get('subject'))->get();
+$teachers=User::where('subject','LIKE','%'.$data.'%')->get();
+
+// dd($teachers);
+        return view('frontend.teachersprofile', compact('teachers'));
+    }
+
     public function teacherprofile($id){
         $info=User::find($id);
         return view('frontend.sinleprofile', compact('info'));

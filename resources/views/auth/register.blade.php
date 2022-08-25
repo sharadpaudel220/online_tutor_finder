@@ -71,7 +71,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Country') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('City') }}</label>
                             <div class="col-md-6">
                                 <select name="country_id" class="form-control">
                                     @foreach ($countries as $id => $country)

@@ -79,11 +79,11 @@
                                             <i class="fa fa-eye"></i>
                                         </a>
                                     @endcan
-                                    @can('proposal_edit')
+                                    {{-- @can('proposal_edit')
                                         <a href="{{ route('admin.proposals.edit', $proposal) }}" class="btn btn-sm btn-primary">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                    @endcan
+                                    @endcan --}}
                                     @can('proposal_delete')
                                         <form onclick="return confirm('are you sure !')" action="{{ route('admin.proposals.destroy', $proposal) }}"
                                         method="POST">

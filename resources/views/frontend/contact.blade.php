@@ -41,7 +41,7 @@
         <span>Email: </span> <span>tutorfinder@gmail.com</span>  <br> <br>
         <span>Phone: </span> <span>9876543210</span> <br> <br>
         <span>FAX: </span> <span>01-2345678</span><br> <br>
-        <span>Visit us: </span> <span>Idontknow, Kathmandu, Nepal</span> <br> <br>
+        <span>Visit us: </span> <span>Kathmandu, Nepal</span> <br> <br>
 
 
         

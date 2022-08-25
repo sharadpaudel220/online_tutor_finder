@@ -5,14 +5,14 @@
     <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex">
                 <h6 class="m-0 font-weight-bold text-primary">
-                    {{ __('Countries') }}
+                    {{ __('Cities') }}
                 </h6>
                 <div class="ml-auto">
                     <a href="{{ route('admin.countries.create') }}" class="btn btn-primary">
                         <span class="icon text-white-50">
                             <i class="fa fa-plus"></i>
                         </span>
-                        <span class="text">{{ __('New country') }}</span>
+                        <span class="text">{{ __('New city') }}</span>
                     </a>
                 </div>
             </div>

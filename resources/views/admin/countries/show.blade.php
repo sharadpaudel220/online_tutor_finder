@@ -9,7 +9,7 @@
                 </h6>
                 <div class="ml-auto">
                     <a href="{{ route('admin.countries.index') }}" class="btn btn-primary">
-                        <span class="text">Back to countries</span>
+                        <span class="text">Back to cities</span>
                     </a>
                 </div>
             </div>

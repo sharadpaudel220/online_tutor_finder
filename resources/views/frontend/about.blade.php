@@ -45,8 +45,11 @@
         </div>
     </div> --}}
     <div class="col-sm-8 mt m-5" style="width: 800px;"> 
-       
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+        <p>“Web Application for Finding Home Tutor Using Laravel” is a PHP based project that is designed to connect teachers and students that are looking for the private tutoring process. 
+
+            This project acts as a bridge between students who are looking for a teacher to have private tuition & the teachers who are looking for student to teach private tuition. 
+            </p>
         <hr>
         <br>
         <h3>What do we do?</h3>

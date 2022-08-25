@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Job;
 use App\Models\Proposal;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Gate;
@@ -51,11 +52,25 @@ class JobController extends Controller
      */
     public function store(JobRequest $request)
     {
-        $job = Job::create($request->validated() + ['student_id' => auth()->id()]);
+        // dd($request->all());
+        // $job = Job::create($request->validated() + ['student_id' => auth()->id()]);
 
+        // foreach ($request->input('attachments', []) as $file) {
+        //     $job->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('attachments');
+        // }
+        $job=new Job();
+        $job->student_id=Auth::user()->id;
+        $job->teacher_id=null;
+        $job->title=$request->title;
+        $job->description=$request->description;
+        $job->budget=$request->budget;
+        $job->delivery_date=$request->delivery_date;
+        $job->hired_at=$request->hired_at;
         foreach ($request->input('attachments', []) as $file) {
-            $job->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('attachments');
+                $job->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('attachments');
         }
+        $job->save();
+
 
         return redirect()->route('admin.jobs.index')->with([
             'message' => 'success created !',
@@ -125,8 +140,9 @@ class JobController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Job $job)
+    public function destroy($id)
     {
+        $job=Job::find($id);
         $job->delete();
 
         return back()->with([

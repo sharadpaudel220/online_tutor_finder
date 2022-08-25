@@ -33,6 +33,8 @@ Route::group(['middleware' => 'auth','prefix' => 'admin', 'as' => 'admin.'], fun
     Route::resource('proposals', \App\Http\Controllers\Admin\ProposalController::class);
     Route::post('proposals/media', [\App\Http\Controllers\Admin\ProposalController::class, 'storeMedia'])->name('proposals.storeMedia');
     Route::get('proposals/mediashow/{mediaItem}', [\App\Http\Controllers\Admin\JobController::class, 'downloadMedia'])->name('proposals.downloadMedia');
+    Route::post('rateuser/{id}',[\App\Http\Controllers\Admin\RatingController::class,'rateuser'])->name('rateuser');
+    Route::put('updateuser/{id}',[\App\Http\Controllers\Admin\RatingController::class,'updaterating'])->name('updaterating');
 
 
 
@@ -44,7 +46,10 @@ Route::group(['middleware' => 'auth','prefix' => 'admin', 'as' => 'admin.'], fun
 Route::view('/about','frontend.about');
 Route::view('/contact', 'frontend.contact');
 Route::get('searchteacher',[\App\Http\Controllers\Admin\UserController::class,'search'])->name('search');
+Route::post('searchbycategory',[\App\Http\Controllers\Admin\UserController::class,'searchbycategory'])->name('searchbycategory');
+Route::get('searchteacher1',[\App\Http\Controllers\Admin\UserController::class,'search'])->name('searchlist');
 Route::post('teacherprofile/{id}',[\App\Http\Controllers\Admin\UserController::class,'teacherprofile'])->name('teacherprofile');
+Route::get('teacherprofile/{id}',[\App\Http\Controllers\Admin\UserController::class,'teacherprofile'])->name('teacherprofile');
 
 Auth::routes();
 

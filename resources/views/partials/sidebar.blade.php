@@ -36,7 +36,7 @@
             @can('country_access')
             <li class="nav-item {{ request()->is('admin/countries') || request()->is('admin/countries/*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('admin.countries.index') }}">
-                    <span>{{ __('Country') }}</span>
+                    <span>{{ __('Cities') }}</span>
                 </a>
             </li>
             @endcan

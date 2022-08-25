@@ -22,7 +22,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="title">title</label>
+                                <label for="title">Title</label>
                                 <input class="form-control" id="title" type="text" name="title" value="{{ old('title') }}">
                                 @error('title')<span class="text-danger">{{ $message }}</span>@enderror
                             </div>
@@ -31,7 +31,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="description">description</label>
+                                <label for="description">Description</label>
                                 <textarea id="description" name="description" class="form-control " rows="4">{{ old('description', isset($job) ? $job->description : '') }}</textarea>
                                 @error('description')<span class="text-danger">{{ $message }}</span>@enderror
                             </div>
@@ -40,7 +40,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="budget">budget</label>
+                                <label for="budget">Fees</label>
                                 <input type="text" id="budget" name="budget" class="form-control" value="{{ old('budget', isset($job) ? $job->budget : '') }}">
                                 @error('budget')<span class="text-danger">{{ $message }}</span>@enderror
                             </div>
@@ -49,7 +49,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="delivery_date">delivery_date</label>
+                                <label for="delivery_date">Delivery_date</label>
                                 <input type="date" id="delivery_date" name="delivery_date" class="form-control" value="{{ old('delivery_date', isset($job) ? $job->delivery_date : '') }}">
                                 @error('delivery_date')<span class="text-danger">{{ $message }}</span>@enderror
                             </div>
@@ -59,7 +59,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="attachments">attachments</label>
+                                <label for="attachments">Attachment for scholarship</label>
                                 <div class="needsclick dropzone" id="attachments-dropzone">
 
                                 </div>
