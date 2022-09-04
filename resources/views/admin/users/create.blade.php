@@ -37,7 +37,7 @@
                         <input type="text" class="form-control" id="password" placeholder="{{ __('Password') }}" name="password" value="{{ old('password') }}" required />
                     </div>
                     <div class="form-group">
-                        <label for="country">{{ __('Country') }}</label>
+                        <label for="country">{{ __('City') }}</label>
                         <select name="country_id" id="country" class="form-control select2" required>
                             @foreach($countries as $id => $country)
                                 <option value="{{ $id }}" >{{ $country }}</option>

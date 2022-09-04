@@ -61,7 +61,7 @@
 
                                     <button class="btn btn-lite" type="submit">{{ $teacher->subject }}</button>
                                     @else
-                                    <a href="{{ route('login') }}" class="btn btn-info">{{ $teacher->subject }}</a>
+                                    <a href="{{ route('login') }}" class="btn btn-light">{{ $teacher->subject }}</a>
                                @endauth
                             </li>
                         

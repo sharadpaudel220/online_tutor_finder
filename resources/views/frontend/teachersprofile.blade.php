@@ -47,8 +47,20 @@
 
 
                 @foreach ($teachers as $key => $teacher)
-          
-                    @if (Auth::user()->name != $teacher->name)
+                    @php
+                        $rolename = Auth::user()
+                            ->roles()
+                            ->pluck('title');
+                            // dd($rolename);
+                            $teacher_rolename = $teacher
+                            ->roles()
+                            ->pluck('title');
+                            // dd($teacher_rolename);
+                            
+                        
+                    @endphp
+
+                    @if ( $rolename[0]!= $teacher_rolename[0])
                         <tr>
 
                             <th scope="row">{{ $key + 1 }}</th>
@@ -70,14 +82,16 @@
                                     // dd($star);
                                 @endphp
                                 @isset($star)
-                                <h3>{{$star}}</h3>
+                                    <h3>{{ $star }}</h3>
                                 @else
-                                no raings available
+                                    no raings available
                                 @endisset
-                                
+
                             </td>
                         </tr>
+                    
                     @endif
+                
                 @endforeach
 
             </tbody>
